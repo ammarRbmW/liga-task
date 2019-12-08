@@ -21,20 +21,20 @@ beforeEach(function () {
 })
 
 
-// it('Create New Article', () => {
-//   cy.visit(APP_URL + 'articles')
-//     .get('#add-new-item').click()
-//     .url().should('include', APP_URL + 'articles/create')
-//     .get('#title').type('title')
-//     .get('.ql-editor > p').type('content')
-//     .get('#mat-input-0').type('12/8/2019')
-//     .get('input[type=file]')
-//     .uploadFile('6-200x200.jpg')
-//     .get('.mat-raised-button > .mat-button-wrapper').click()
-//     .url().should('include', APP_URL + 'articles')
-//     .get('.mat-simple-snackbar > :nth-child(1)')
-//     .should("have.text", "Item created successfully.")
-// });
+it('Create New Article', () => {
+  cy.visit(APP_URL + 'articles')
+    .get('#add-new-item').click()
+    .url().should('include', APP_URL + 'articles/create')
+    .get('#title').type('title')
+    .get('.ql-editor > p').type('content')
+    .get('#mat-input-0').type('12/8/2019')
+    .get('input[type=file]')
+    .uploadFile('6-200x200.jpg')
+    .get('.mat-raised-button > .mat-button-wrapper').click()
+    .url().should('include', APP_URL + 'articles')
+    .get('.mat-simple-snackbar > :nth-child(1)')
+    .should("have.text", "Item created successfully.")
+});
 
 it('Delete Article', () => {
   cy.visit(APP_URL + 'articles')
