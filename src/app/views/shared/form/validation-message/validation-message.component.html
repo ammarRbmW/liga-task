@@ -1,0 +1,28 @@
+<mat-hint *ngIf="form.controls[field].hasError('required') && form.controls[field].touched">
+  this field is required
+</mat-hint>
+<mat-hint *ngIf="form.controls[field].hasError('minlength') && form.controls[field].touched">
+  this field must be at least {{form.controls[field].errors.minlength.requiredLength}} characters long.
+</mat-hint>
+<mat-hint *ngIf="form.controls[field].hasError('maxlength') && form.controls[field].touched">Your {{field}} cannot
+  exceed {{form.controls[field].errors.maxlength.requiredLength}}
+  characters.
+</mat-hint>
+
+<mat-hint *ngIf="form.controls[field].errors?.email && form.controls[field].touched">You must include a valid email
+  address.
+</mat-hint>
+
+<mat-hint *ngIf="form.controls[field].errors?.url && form.controls[field].touched">You must include a valid web address.
+</mat-hint>
+<mat-hint *ngIf="form.controls[field].errors?.date && form.controls[field].touched">You must include a valid date.
+</mat-hint>
+<mat-hint *ngIf="form.controls[field].errors?.range && form.controls[field].touched"
+>Number should be between 5 and 9.
+</mat-hint>
+<mat-hint *ngIf="form.controls[field].errors?.phone && form.controls[field].touched">You must include a valid phone
+  number.
+</mat-hint>
+<mat-hint *ngIf="form.controls[field].errors?.equalTo">
+  Passwords do not math.
+</mat-hint>

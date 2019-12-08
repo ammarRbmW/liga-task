@@ -1,0 +1,15 @@
+<div fxFlex.gt-md="100" fxFlex="100">
+  <mat-form-field>
+    <input [id]="field" [type]="type" *ngIf="placeholder" matInput
+           placeholder="{{ placeholder   }}"
+           [formControl]="formGroup.controls[field]">
+    <input [id]="field" [type]="type" *ngIf="!placeholder" matInput
+           placeholder="{{ field   }}"
+           [formControl]="formGroup.controls[field]">
+  </mat-form-field>
+  <app-validation-message
+    [inputForm]="formGroup"
+    [field]="field">
+  </app-validation-message>
+</div>
+

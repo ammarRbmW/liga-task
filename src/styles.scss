@@ -1,4 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~quill/dist/quill.snow.css";
+@import "~quill/dist/quill.bubble.css";
+html, body {
+  height: 100%;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/*********************container*********************/
+.app-container {
+  min-height: calc(100vh - 140px);
+
+  mat-toolbar {
+    padding: 2rem
+  }
+}
+
+/*********************height: calc(100vh - 140px)*************************/
+
+
+.mat-form-field, .custom-form {
+  width: 100%;
+}
+
+/*************table**************/
+table.mat-table {
+  width: 100%;
+}
+
+.mat-elevation-z8 {
+  box-shadow: initial;
+}
+
+.table-img {
+  width: 50px;
+  padding: .2rem;
+  border-radius: 7px;
+}
+
+/********************************/
+
+/*************card****************/
+mat-card {
+  margin: 2rem;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12) !important;
+}
+
+/*************card****************/
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

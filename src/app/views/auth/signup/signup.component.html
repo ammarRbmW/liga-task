@@ -1,1 +1,31 @@
-<p>signup works!</p>
+<div class="auth-bg">
+  <mat-card>
+    <mat-card-title>Sign Up</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="submit()" class="custom-form">
+        <app-input-validation
+          field="firstName" placeholder="First Name"
+          [inputForm]="form">
+        </app-input-validation>
+        <app-input-validation
+          field="lastName" placeholder="Last Name"
+          [inputForm]="form">
+        </app-input-validation>
+        <app-input-validation
+          field="username" placeholder="Username"
+          type="email" [inputForm]="form">
+        </app-input-validation>
+        <app-input-validation
+          field="password" placeholder="Password"
+          type="password" [inputForm]="form">
+        </app-input-validation>
+        <div class="button-box">
+          <button routerLink="/auth/login" mat-button color="primary">Login</button>
+          <button type="submit" id="submit" mat-raised-button color="primary">Sign up</button>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+

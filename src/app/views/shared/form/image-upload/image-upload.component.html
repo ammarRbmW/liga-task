@@ -1,0 +1,14 @@
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <div fxFlex.gt-sm="33.33%" fxFlex="100">
+    <mat-card>
+
+      <div fxLayout="row" fxLayout.sm="column">
+
+        <img *ngIf="base64textString[0]" style="width: 100%" [src]="base64textString[0]">
+
+      </div>
+      <input type="file" class="custom-file-input"
+             (change)="onFileChange($event.target.files)">
+    </mat-card>
+  </div>
+</div>

@@ -6,6 +6,8 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSliderModule} from '@angular/material';
 import {SharedModule} from './views/shared/shared.module';
+import {HttpClientModule} from '@angular/common/http';
+import {QuillModule} from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,11 @@ import {SharedModule} from './views/shared/shared.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule,
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

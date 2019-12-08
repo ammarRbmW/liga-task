@@ -1,5 +1,8 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatMenuTrigger} from '@angular/material';
+import {Component, OnInit} from '@angular/core';
+
+import {User} from '../../../../core/models';
+import {UserService} from '../../../../core/services';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,14 +10,24 @@ import {MatMenuTrigger} from '@angular/material';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  // @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+  currentUser: User;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private router: Router,
+              private userService: UserService) {
   }
 
-  // someMethod() {
-  //   this.trigger.openMenu();
-  // }
+  ngOnInit() {
+    this.userService.currentUser.subscribe(
+      (userData) => {
+        this.currentUser = userData;
+      }
+    );
+  }
+
+  logout() {
+    this.userService.purgeAuth();
+    this.router.navigateByUrl('/auth/login');
+
+  }
+
 }

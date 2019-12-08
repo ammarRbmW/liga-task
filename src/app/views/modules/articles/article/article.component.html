@@ -1,1 +1,38 @@
-<p>article works!</p>
+<div class="app-container">
+  <mat-toolbar>
+
+    <span>New Article</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+
+  <app-image-upload field="image" placeholder="image"
+                    [inputForm]="form"></app-image-upload>
+  <mat-card>
+
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="submit()" class="custom-form">
+
+        <app-input-validation
+          field="title" placeholder="Title"
+          [inputForm]="form">
+        </app-input-validation>
+
+        <quill-editor [formControl]="form.controls['content']"></quill-editor>
+
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" [formControl]="form.controls.date"
+                 placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="primary">Save</button>
+
+
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+</div>
+
